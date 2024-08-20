@@ -54,7 +54,6 @@ namespace Fundamentos
                     int valorDefesa = this.defender();
                     int danoDeVida2 = valorAtaqueInimigo - valorDefesa;
 
-
                     if (danoDeVida <= 0)
                     {
                         danoDeVida2 = 1;
