@@ -1,4 +1,5 @@
 ﻿using Fundamentos;
+using System.Data;
 
 internal class Program
 {
@@ -139,6 +140,34 @@ internal class Program
         galinha.Nome = "Pupu";
         Console.WriteLine(galinha.Nome + " faz: ");
         galinha.emitirSom();
+
+
+        Mago magin = new Mago();
+
+        magin.Nome = "magin";
+        magin.Vida = 300;
+        magin.Forca = 50;
+        magin.Inteligencia = 95;
+        magin.Agilidade = 30;
+        magin.Nivel = 5;
+
+        Elfo elfo = new Elfo();
+        elfo.Nome = "Tripin";
+        elfo.Vida = 150;
+        elfo.Inteligencia = 63;
+        elfo.Forca = 46;
+        elfo.Agilidade = 98;
+        elfo.Nivel = 4;
+
+
+
+        magin.apresentarSe();
+        elfo.apresentarSe();
+
+        int ataque = magin.atacar();
+        int defesa = magin.defender();
+        Console.WriteLine("Força do Ataque: " + ataque);
+        Console.WriteLine("Força de Defesa: " + defesa);
 
     }
 }
