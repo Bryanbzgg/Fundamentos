@@ -145,7 +145,7 @@ internal class Program
         Mago magin = new Mago();
 
         magin.Nome = "magin";
-        magin.Vida = 300;
+        magin.Vida = 400;
         magin.Forca = 50;
         magin.Inteligencia = 95;
         magin.Agilidade = 30;
@@ -153,7 +153,7 @@ internal class Program
 
         Elfo elfo = new Elfo();
         elfo.Nome = "Tripin";
-        elfo.Vida = 150;
+        elfo.Vida = 950;
         elfo.Inteligencia = 63;
         elfo.Forca = 46;
         elfo.Agilidade = 98;
@@ -168,6 +168,8 @@ internal class Program
         int defesa = magin.defender();
         Console.WriteLine("Força do Ataque: " + ataque);
         Console.WriteLine("Força de Defesa: " + defesa);
+
+        magin.batalhar(elfo);
 
     }
 }
