@@ -159,6 +159,14 @@ internal class Program
         elfo.Agilidade = 48;
         elfo.Nivel = 4;
 
+        Cavaleiro cavaleiro = new Cavaleiro();
+        cavaleiro.Nome = "Cleito";
+        cavaleiro.Vida = 200;
+        cavaleiro.Inteligencia = 53;
+        cavaleiro.Forca = 76;
+        cavaleiro.Agilidade = 68;
+        cavaleiro.Nivel = 6;
+
 
 
         magin.apresentarSe();
@@ -171,7 +179,9 @@ internal class Program
         Console.WriteLine("Força de Defesa: " + defesa);
         */
 
-        magin.batalhar(elfo);
+        magin.batalhar(cavaleiro);
+        elfo.batalhar(magin);
+
 
     }
 }
