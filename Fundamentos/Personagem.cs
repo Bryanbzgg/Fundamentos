@@ -23,7 +23,7 @@ namespace Fundamentos
             this.Forca *= 2;
             this.Agilidade *= 2;
             this.Inteligencia *= 2;
-            Console.WriteLine("O jogador " + this.Nome + " evoluiu para o nivel " + this.Nivel + ". Seus novos valores são: \nAgilidade: " + " \nInteligencia: " + this.Inteligencia + "\nForça");
+            Console.WriteLine("O jogador " + this.Nome + " evoluiu para o nivel " + this.Nivel + ". Seus novos valores são: \nAgilidade: " + this.Agilidade + " \nInteligencia: " + this.Inteligencia + "\nForça: " + this.Forca);
 
         }
         public virtual int atacar()
@@ -44,43 +44,45 @@ namespace Fundamentos
         {
             bool vencedor = false;
             while (vencedor == false)
-                while (this.Vida > 0 || p.Vida > 0)
+            {
+
+                int valorAtaque = this.atacar();
+                int valorDefesaInimigo = p.defender();
+                int danoDeVida = valorAtaque - valorDefesaInimigo;
+                if (danoDeVida <= 0)
                 {
-
-                    int valorAtaque = this.atacar();
-                    int valorDefesaInimigo = p.defender();
-                    int danoDeVida = valorAtaque - valorDefesaInimigo;
-                    if (danoDeVida <= 0)
-                    {
-                        danoDeVida = 1;
-                    }
-                    p.Vida = p.Vida - danoDeVida;
-                    Console.WriteLine("Dano na vida do inimigo em " + danoDeVida);
-                    Console.WriteLine("O nivel de vida do inimigo agora é " + p.Vida);
-
-                    int valorAtaqueInimigo = p.atacar();
-                    int valorDefesa = this.defender();
-                    int danoDeVida2 = valorAtaqueInimigo - valorDefesa;
-
-                    if (danoDeVida <= 0)
-                    {
-                        danoDeVida2 = 1;
-                    }
-                    this.Vida = this.Vida - danoDeVida2;
-
-                    Console.WriteLine("=============================================================");
-                    if (this.Vida <= 0)
-                    {
-                        Console.WriteLine("O personagem " + p.Nome + "venceu!");
-                        vencedor = true;
-                        p.evoluir();
-                    }
-                    if (p.Vida <= 0)
-                    {
-                        Console.WriteLine("O personagem " + this.Nome + " venceu!");
-                        vencedor = true;
-                    }
+                    danoDeVida = 1;
                 }
+                p.Vida = p.Vida - danoDeVida;
+                Console.WriteLine("Dano na vida do inimigo em " + danoDeVida);
+                Console.WriteLine("O nivel de vida do inimigo agora é " + p.Vida);
+
+                int valorAtaqueInimigo = p.atacar();
+                int valorDefesa = this.defender();
+                int danoDeVida2 = valorAtaqueInimigo - valorDefesa;
+
+                if (danoDeVida2 <= 0)
+                {
+                    danoDeVida2 = 1;
+                }
+                this.Vida = this.Vida - danoDeVida2;
+                Console.WriteLine("Dano na vida do atacante em " + danoDeVida2);
+                Console.WriteLine("O nivel de vida do atacante agora é " + this.Vida);
+
+                Console.WriteLine("=============================================================");
+                if (this.Vida <= 0)
+                {
+                    Console.WriteLine("O personagem " + p.Nome + " venceu!");
+                    vencedor = true;
+                    p.evoluir();
+                }
+                if (p.Vida <= 0)
+                {
+                    Console.WriteLine("O personagem " + this.Nome + " venceu!");
+                    vencedor = true;
+                    this.evoluir();
+                }
+            }
         }
 
 

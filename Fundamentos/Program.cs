@@ -125,21 +125,21 @@ internal class Program
         //animal1.emitirSom();
 
         //Console.WriteLine("O animal " + animal1.Especie + " emitiu um som");
-        Gato gato = new Gato();
-        gato.Nome = "jorjin";
-        Console.WriteLine(gato.Nome + " faz: ");
+        //Gato gato = new Gato();
+        //gato.Nome = "jorjin";
+        //Console.WriteLine(gato.Nome + " faz: ");
 
-        gato.emitirSom();
+        //gato.emitirSom();
 
-        Porco porco = new Porco();
-        porco.Nome = "al bilai";
-        Console.WriteLine(porco.Nome + " faz: ");
-        porco.emitirSom();
+        //Porco porco = new Porco();
+        //porco.Nome = "al bilai";
+        //Console.WriteLine(porco.Nome + " faz: ");
+        //porco.emitirSom();
 
-        Galinha galinha = new Galinha();
-        galinha.Nome = "Pupu";
-        Console.WriteLine(galinha.Nome + " faz: ");
-        galinha.emitirSom();
+        //Galinha galinha = new Galinha();
+        //galinha.Nome = "Pupu";
+        //Console.WriteLine(galinha.Nome + " faz: ");
+        //galinha.emitirSom();
 
 
         Mago magin = new Mago();
@@ -147,16 +147,16 @@ internal class Program
         magin.Nome = "magin";
         magin.Vida = 400;
         magin.Forca = 50;
-        magin.Inteligencia = 95;
+        magin.Inteligencia = 85;
         magin.Agilidade = 30;
         magin.Nivel = 5;
 
         Elfo elfo = new Elfo();
         elfo.Nome = "Tripin";
-        elfo.Vida = 950;
+        elfo.Vida = 300;
         elfo.Inteligencia = 63;
         elfo.Forca = 46;
-        elfo.Agilidade = 98;
+        elfo.Agilidade = 48;
         elfo.Nivel = 4;
 
 
@@ -164,10 +164,12 @@ internal class Program
         magin.apresentarSe();
         elfo.apresentarSe();
 
+        /*
         int ataque = magin.atacar();
         int defesa = magin.defender();
         Console.WriteLine("Força do Ataque: " + ataque);
         Console.WriteLine("Força de Defesa: " + defesa);
+        */
 
         magin.batalhar(elfo);
 
